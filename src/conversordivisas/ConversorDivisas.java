@@ -13,6 +13,9 @@ import java.util.Scanner;
  */
 public class ConversorDivisas {
     
+    
+    // Probamos que se añade esta línea a GitHub
+    
     public static float convertirLibras(float euros, String divisas){
         
         Scanner teclado=new Scanner(System.in);
