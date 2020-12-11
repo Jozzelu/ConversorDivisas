@@ -13,23 +13,40 @@ import java.util.Scanner;
  */
 public class ConversorDivisas {
     
-    public static float convertirLibras(float euros){
-        float libras=1.2F;
-        libras=(euros*libras);
-        return libras;
+    public static float convertirLibras(float euros, String divisas){
+        
+        Scanner teclado=new Scanner(System.in);
+        
+        String divisa="";
+        
+        String dolares="dolares";
+        String yenes="yenes";
+        float libra=1.2F;
+        float resultado = 0F;
+        
+        divisa=teclado.next();
+        divisa=divisa.toLowerCase();
+        
+        if (divisa.equals(libras)){
+           
+            resultado=(euros*libra);
+            
+    }
+        
+        return resultado;
     }
     
-    public static float convertirDolares(float euros){
-        float dolares=1.3F;
+
+      /*  float dolares=1.3F;
         dolares=(euros*dolares);
         return dolares;
     }
     
-    public static float convertirYenes(float euros){
+
         float yenes=0.89F;
         yenes=(euros*yenes);
         return yenes;
-    }
+    }*/
     
     /**
      * @param args the command line arguments
@@ -48,9 +65,12 @@ public class ConversorDivisas {
         System.out.println("Introduce un número de euros");
         euros = teclado.nextFloat();
         System.out.println("Introduce la divisa a la que quieres hacer la conversión (libras, dolares o yenes)");
-        divisa=teclado.next();
-        divisa=divisa.toLowerCase();        
+       
+       float valorConvertido=convertirLibras(euros, divisa);
+       
+       System.out.println("El cambio de "+euros+"€ a libras es de "+valorConvertido+"£");}
         
+        /*
         if(divisa.equals(libras)){
             System.out.println("El cambio de "+euros+"€ a libras es de "+convertirLibras(euros)+"£");}
         else if(divisa.equals(dolares)){
@@ -59,6 +79,6 @@ public class ConversorDivisas {
             System.out.println("El cambio de "+euros+"€ a yenes es de "+convertirYenes(euros)+"¥");}
         else {
             System.out.println("Lo siento, pero este programa no hace ese tipo de cambio");
-        }
+        }*/
     }
-}
+
